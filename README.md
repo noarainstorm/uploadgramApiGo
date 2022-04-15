@@ -1,4 +1,4 @@
-# uploadgram-go
+# uploadgram-api-go
 Easy to use uploadgram.me api
 ### Already done:
 
