@@ -1,4 +1,4 @@
-package ugApiGo
+package uploadgramApiGo
 
 import (
 	"encoding/json"
