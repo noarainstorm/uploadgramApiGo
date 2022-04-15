@@ -10,6 +10,12 @@ Easy to use uploadgram.me api
 
 + Rename files
 
+## How install it?
+
+```
+$ go get github.com/noarainstorm/uploadgramApiGo
+```
+
 ## How use it?
 
 ### Init the  module
@@ -18,7 +24,7 @@ Easy to use uploadgram.me api
 package main
 import (
     "fmt"
-    uploadgram "github.com/noarainstorm/uploadgram-go"
+    uploadgram "github.com/noarainstorm/uploadgramApiGo"
 )
 
 func main() {
