@@ -78,6 +78,46 @@ func main() {
 ...
 ```
 
+## Simple example
+
+```
+package main
+import (
+	ug "github.com/noarainstorm/uploadgramApiGo"
+	"fmt"
+	"os"
+)
+
+func main() {
+	api := ug.New("","")
+	err := api.Upload("Downloads/hello.txt")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("File uploaded! %s :: link, %s token\n", api.Response.Url, api.Response.Token)
+	fileData, err := api.Download(api.Response.Url)
+	if err != nil {
+		panic(err)
+	}
+	file, err := os.Create(api.DownloadInfo.Filename)
+	if err != nil {
+		panic(err)
+	}
+	file.Write(fileData)
+	fmt.Println("File downloaded!")
+	err = api.Rename(api.Response.Token, "WOW")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("File renamed!")
+	err = api.Delete(api.Response.Token)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("File deleted from servers!")
+}
+```
+
 ## *Need more docs?*
 
 ### Read Docs [here](https://pkg.go.dev/github.com/noarainstorm/uploadgramApiGo "Docs here")
