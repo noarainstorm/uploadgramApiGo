@@ -40,6 +40,7 @@ type All struct {
 }
 
 var (
+	ErrOpenFile = errors.New("file opening error")
 	ErrFileName = errors.New("invalid file name")
 	ErrToken    = errors.New("invalid token")
 	ErrServer   = errors.New("error on server")
@@ -68,9 +69,8 @@ func (tool *All) Upload(filePath string) (err error) {
 	defer tool.File.Close()
 
 	if err != nil {
-		return
+		return ErrOpenFile
 	}
-
 	_, tool.Out, err = tool.request("PUT", tool.Api+"upload", tool.File)
 	if err != nil {
 		return
