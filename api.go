@@ -18,7 +18,7 @@ type Config struct {
 type Response struct {
 	Ok    bool
 	Url   string
-	Token string
+	Token string `json:"delete"`
 
 	DeleteStat int
 }
