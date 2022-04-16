@@ -40,7 +40,7 @@ func main() {
     if err != nil {
         panic(err)
     }
-    link, token := api.Response.Url, api.Response.Delete
+    link, token := api.Response.Url, api.Response.Token
 ...
 ```
 
