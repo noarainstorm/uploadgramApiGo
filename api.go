@@ -1,13 +1,13 @@
 package uploadgramApiGo
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
 	"strings"
-	"bytes"
 )
 
 func New(api string, userAgent string) All {
