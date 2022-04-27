@@ -78,6 +78,24 @@ func (tool *All) Upload(filePath string) (err error) {
 	return
 }
 
+func (tool *All) UploadFromReader(ioo io.Reader) (err error) {
+	_, tool.Out, err = tool.request("PUT", tool.Api+"upload", ioo)
+	if err != nil {
+		return
+	}
+	err = tool.unjson()
+
+	if err != nil {
+		return
+	}
+
+	if !tool.Response.Ok {
+		return ErrServer
+	}
+
+	return
+}
+
 func (tool *All) loadFile(path string) (err error) {
 	tool.File, err = os.Open(path)
 	return err
