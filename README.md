@@ -1,7 +1,7 @@
 # uploadgramApiGo
 Easy to use uploadgram.me api
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/noarainstorm/uploadgramApiGo)](https://pkg.go.dev/github.xom/noarainstorm/uploadgramApiGo)
+[![Go Reference](https://pkg.go.dev/badge/github.com/noarainstorm/uploadgramApiGo)](https://pkg.go.dev/github.com/noarainstorm/uploadgramApiGo)
 
 # Already done:
 
