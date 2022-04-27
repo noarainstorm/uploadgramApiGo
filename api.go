@@ -78,15 +78,15 @@ func (tool *All) Upload(filePath string) (err error) {
 	return
 }
 
-func (tool *All) UploadFromReader(ioo io.Reader) (err error) {
-	_, tool.Out, err = tool.request("PUT", tool.Api+"upload", ioo)
+func (tool *All) UploadBytes(input []byte) (err error) {
+	_, tool.Out, err = tool.request("PUT", tool.Api+"upload", input)
 	if err != nil {
 		return
 	}
 	err = tool.unjson()
 
 	if err != nil {
-		return
+		return ErrUnJsob
 	}
 
 	if !tool.Response.Ok {
