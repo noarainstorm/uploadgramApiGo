@@ -1,5 +1,7 @@
 package uploadgramApiGo
 
+import "os"
+
 type Config struct {
 	Api       string
 	UserAgent string

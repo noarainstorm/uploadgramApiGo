@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"bytes"
 )
 
 func New(api string, userAgent string) All {
@@ -49,8 +50,8 @@ func (tool *All) Upload(filePath string) (err error) {
 	return
 }
 
-func (tool *All) UploadBytes(input []byte) (err error) {
-	_, tool.Out, err = tool.request("PUT", tool.Api+"upload", input)
+func (tool *All) UploadBytes(inp []byte) (err error) {
+	_, tool.Out, err = tool.request("PUT", tool.Api+"upload", bytes.NewReader(inp))
 	if err != nil {
 		return
 	}
