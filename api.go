@@ -57,7 +57,7 @@ func (tool *All) UploadBytes(input []byte) (err error) {
 	err = tool.unjson()
 
 	if err != nil {
-		return ErrUnJsob
+		return ErrUnJson
 	}
 
 	if !tool.Response.Ok {
